@@ -22,17 +22,6 @@ begin
 end//
 delimiter ;
 
-delimiter //
-create trigger before_update_posts_history before update on posts
-for each row
-begin
-    if old.content <> new.content then
-        insert into post_history (post_id, old_content, new_content, changed_at, changed_by_user_id)
-        values (old.post_id, old.content, new.content, now(), old.user_id);
-    end if;
-end//
-delimiter ;
-
 update posts
 set content = 'nội dung bài viết đã được chỉnh sửa lần 1'
 where post_id = 1;

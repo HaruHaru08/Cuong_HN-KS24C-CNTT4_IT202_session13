@@ -2,8 +2,6 @@ use Session13;
 insert into posts (user_id, content, created_at)
 values (2, 'another post by bob', '2025-01-13 10:00:00');
 
-drop trigger if exists after_insert_likes;
-drop trigger if exists after_delete_likes;
 
 -- 3
 delimiter //

@@ -8,8 +8,6 @@ create table post_history (
     changed_by_user_id int,
     foreign key (post_id) references posts(post_id) on delete cascade
 );
-drop trigger if exists before_update_posts_history;
-drop trigger if exists after_delete_posts_history;
 
 delimiter //
 create trigger before_update_posts_history before update on posts

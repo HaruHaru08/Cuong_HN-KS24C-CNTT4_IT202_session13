@@ -6,9 +6,8 @@ begin
     values (p_username, p_email, p_created_at);
 end//
 delimiter ;
-drop trigger if exists before_insert_users;
-delimiter //
 
+delimiter //
 create trigger before_insert_users before insert on users
 for each row
 begin
